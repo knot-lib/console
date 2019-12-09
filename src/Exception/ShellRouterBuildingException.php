@@ -1,0 +1,21 @@
+<?php
+namespace KnotLib\Console\Exception;
+
+use Throwable;
+
+class ShellRouterBuildingException extends ConsoleException
+{
+    /**
+     * ShellRouterBuildingException constructor.
+     *
+     * @param string $message
+     * @param int $code
+     * @param Throwable|null $prev
+     */
+    public function __construct(string $message, int $code = 0, Throwable $prev = null)
+    {
+        parent::__construct('Router building failed: ' . $message, $code, $prev);
+    }
+}
+
+
