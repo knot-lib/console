@@ -1,20 +1,20 @@
 <?php
+declare(strict_types=1);
+
 namespace KnotLib\Console\Request;
 
-use InvalidArgumentException;
-
-use KnotLib\Kernel\Request\RequestParamsType;
-use KnotLib\Kernel\Request\RequestInterface;
+use Nyholm\Psr7\MessageTrait;
+use Nyholm\Psr7\RequestTrait;
+use Psr\Http\Message\ServerRequestInterface;
 use Stk2k\ArgParser\ArgParser;
 
-class ShellRequest implements RequestInterface
+class ShellRequest implements ServerRequestInterface
 {
-    /** @var array */
-    private $orderd_params;
+    use MessageTrait;
+    use RequestTrait;
 
     /** @var array */
-    private $named_params;
-
+    private $data;
     /**
      * ShellRequest constructor.
      *
@@ -24,29 +24,72 @@ class ShellRequest implements RequestInterface
      */
     public function __construct(array $argv)
     {
-        $data = ArgParser::parse($argv);
-
-        $this->orderd_params = array_filter($data, function(/** @noinspection PhpUnusedParameterInspection */ $value, $key){
-            return is_int($key);
-        }, ARRAY_FILTER_USE_BOTH);
-        $this->named_params = array_filter($data, function(/** @noinspection PhpUnusedParameterInspection */ $value, $key){
-            return is_string($key);
-        }, ARRAY_FILTER_USE_BOTH);
-
+        $this->data = ArgParser::parse($argv);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getParams(string $params_type) : array
+    public function getServerParams()
     {
-        switch($params_type){
-            case RequestParamsType::CONSOLE_ORDERED:
-                return $this->orderd_params;
-
-            case RequestParamsType::CONSOLE_NAMED:
-                return $this->named_params;
-        }
-        throw new InvalidArgumentException('Invalid bag type: ' . $params_type);
+        return $this->data;
     }
+
+    public function getCookieParams()
+    {
+        return [];
+    }
+
+    public function withCookieParams(array $cookies)
+    {
+        return $this;
+    }
+
+    public function getQueryParams()
+    {
+        return [];
+    }
+
+    public function withQueryParams(array $query)
+    {
+        return $this;
+    }
+
+    public function getUploadedFiles()
+    {
+        return [];
+    }
+
+    public function withUploadedFiles(array $uploadedFiles)
+    {
+        return $this;
+    }
+
+    public function getParsedBody()
+    {
+        return [];
+    }
+
+    public function withParsedBody($data)
+    {
+        return $this;
+    }
+
+    public function getAttributes()
+    {
+        return [];
+    }
+
+    public function getAttribute($name, $default = null)
+    {
+        return null;
+    }
+
+    public function withAttribute($name, $value)
+    {
+        return $this;
+    }
+
+    public function withoutAttribute($name)
+    {
+        return $this;
+    }
+
 }

@@ -1,23 +1,29 @@
 <?php
+declare(strict_types=1);
+
 namespace KnotLib\Console\Response;
 
-use KnotLib\Kernel\Response\ResponseInterface;
-use KnotLib\Kernel\Response\StreamInterface;
+use Nyholm\Psr7\MessageTrait;
+use Psr\Http\Message\ResponseInterface;
 
 class ShellResponse implements ResponseInterface
 {
-    /** @var StreamInterface */
-    private $stream;
+    use MessageTrait;
 
-    /**
-     * Get/set body stream
-     *
-     * @param StreamInterface $stream
-     *
-     * @return StreamInterface
-     */
-    public function body(StreamInterface $stream = null) : StreamInterface
+    public function getStatusCode()
     {
-        return $this->stream;
+        return 200;
     }
+
+    public function withStatus($code, $reasonPhrase = '')
+    {
+        return $this;
+    }
+
+    public function getReasonPhrase()
+    {
+        return 'success';
+    }
+
+
 }

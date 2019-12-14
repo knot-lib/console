@@ -15,6 +15,7 @@
     "php": ">=7.1",
     "ext-json": "*",
     "stk2k/argparser": "~0.1",
+    "nyholm/psr7": "^1.2",
     "knot-lib/module": "~0.1"
   },
   "require-dev": {
