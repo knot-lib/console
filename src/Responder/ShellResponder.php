@@ -16,6 +16,8 @@ class ShellResponder implements ResponderInterface
      */
     public function respond(ResponseInterface $response)
     {
+        $body = $response->getBody();
 
+        echo $body, PHP_EOL;
     }
 }
