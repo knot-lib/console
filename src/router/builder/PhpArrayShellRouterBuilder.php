@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\Console\Router\Builder;
+namespace knotlib\console\router\builder;
 
 use Throwable;
-use KnotLib\Console\Exception\ShellRouterBuildingException;
-use KnotLib\Kernel\Router\RouterInterface;
+use knotlib\console\exception\ShellRouterBuildingException;
+use knotlib\kernel\router\RouterInterface;
 
 class PhpArrayShellRouterBuilder extends AbstractShellRouterBuilder
 {

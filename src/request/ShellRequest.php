@@ -1,12 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\Console\Request;
+namespace knotlib\console\request;
 
 use Nyholm\Psr7\MessageTrait;
 use Nyholm\Psr7\RequestTrait;
+
 use Psr\Http\Message\ServerRequestInterface;
-use Stk2k\ArgParser\ArgParser;
+
+use stk2k\argparser\ArgParser;
 
 class ShellRequest implements ServerRequestInterface
 {

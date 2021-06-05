@@ -1,7 +1,8 @@
 <?php
+/** @noinspection PhpMissingReturnTypeInspection */
 declare(strict_types=1);
 
-namespace KnotLib\Console\Response;
+namespace knotlib\console\response;
 
 use Nyholm\Psr7\MessageTrait;
 use Psr\Http\Message\ResponseInterface;

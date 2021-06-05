@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\Console\Middleware;
+namespace knotlib\console\middleware;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-use KnotLib\Kernel\Kernel\ApplicationInterface;
-use KnotLib\Kernel\EventStream\Channels;
-use KnotLib\Kernel\EventStream\Events;
+use knotlib\kernel\kernel\ApplicationInterface;
+use knotlib\kernel\eventstream\Channels;
+use knotlib\kernel\eventstream\Events;
 
 class ShellRoutingMiddleware implements MiddlewareInterface
 {

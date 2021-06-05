@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\Console\Exception;
+namespace knotlib\console\exception;
 
 use Throwable;
 
@@ -11,12 +11,11 @@ class ShellRouterBuildingException extends ConsoleException
      * ShellRouterBuildingException constructor.
      *
      * @param string $message
-     * @param int $code
      * @param Throwable|null $prev
      */
-    public function __construct(string $message, int $code = 0, Throwable $prev = null)
+    public function __construct(string $message, Throwable $prev = null)
     {
-        parent::__construct('Router building failed: ' . $message, $code, $prev);
+        parent::__construct('Router building failed: ' . $message, $prev);
     }
 }
 

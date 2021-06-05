@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\Console\Router;
+namespace knotlib\console\router;
 
 interface ShellDispatcherInterface
 {

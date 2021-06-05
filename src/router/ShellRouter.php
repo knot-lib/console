@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\Console\Router;
+namespace knotlib\console\router;
 
 use Closure;
-use KnotLib\Kernel\Router\RouterInterface;
+use knotlib\kernel\router\RouterInterface;
 
 final class ShellRouter implements RouterInterface
 {

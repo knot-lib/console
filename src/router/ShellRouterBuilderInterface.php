@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\Console\Router;
+namespace knotlib\console\router;
 
-use KnotLib\Kernel\Router\RouterInterface;
-use KnotLib\Console\Exception\ShellRouterBuildingException;
+use knotlib\kernel\router\RouterInterface;
+use knotlib\console\exception\ShellRouterBuildingException;
 
 interface ShellRouterBuilderInterface
 {

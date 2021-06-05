@@ -1,8 +1,10 @@
 <?php
 declare(strict_types=1);
 
+namespace knotlib\console\test\router;
+
 use PHPUnit\Framework\TestCase;
-use KnotLib\Console\Router\ShellRouter;
+use knotlib\console\router\ShellRouter;
 
 final class ShellRouterTest extends TestCase
 {

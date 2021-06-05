@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\Console\Responder;
+namespace knotlib\console\responder;
 
 use Psr\Http\Message\ResponseInterface;
 
-use KnotLib\Kernel\Responder\ResponderInterface;
+use knotlib\kernel\responder\ResponderInterface;
 
 class ShellResponder implements ResponderInterface
 {

@@ -1,8 +1,10 @@
 <?php
-namespace KnotLib\Console\Router\Builder;
+declare(strict_types=1);
 
-use KnotLib\Console\Router\ShellRouterBuilderInterface;
-use KnotLib\Kernel\Router\RouterInterface;
+namespace knotlib\console\router\builder;
+
+use knotlib\console\router\ShellRouterBuilderInterface;
+use knotlib\kernel\router\RouterInterface;
 
 abstract class AbstractShellRouterBuilder implements ShellRouterBuilderInterface
 {

@@ -1,9 +1,11 @@
 <?php
 declare(strict_types=1);
 
+namespace knotlib\console\test\router\builder;
+
 use PHPUnit\Framework\TestCase;
-use KnotLib\Console\Router\ShellRouter;
-use KnotLib\Console\Router\Builder\PhpArrayShellRouterBuilder;
+use knotlib\console\router\ShellRouter;
+use knotlib\console\router\builder\PhpArrayShellRouterBuilder;
 
 final class PhpArrayShellRouterBuilderTest extends TestCase
 {

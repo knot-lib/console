@@ -1,8 +1,10 @@
 <?php
 declare(strict_types=1);
 
+namespace knotlib\console\test\request;
+
 use PHPUnit\Framework\TestCase;
-use KnotLib\Console\Request\ShellRequest;
+use knotlib\console\request\ShellRequest;
 
 final class ShellRequestTest extends TestCase
 {
